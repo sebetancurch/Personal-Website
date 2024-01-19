@@ -1,0 +1,44 @@
+---
+export interface Props {
+  tags?: string[];
+}
+
+const { tags } = Astro.props;
+---
+
+{
+  tags && (
+    <div class="tag-box">
+      {tags.map((tag) => (
+        <span>#{tag}</span>
+      ))}
+    </div>
+  )
+}
+
+<style>
+  .tag-box {
+    display: flex;
+    margin-top: 0.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 66.666667%;
+  }
+
+  .tag-box span {
+    display: inline-block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    font-size: var(--text-md);
+    color: var(--gray-300);
+  }
+
+  @media (min-width: 1024px) {
+    .tag-box span {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+  }
+</style>

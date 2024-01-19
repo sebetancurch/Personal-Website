@@ -1,0 +1,171 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout
+  title="About | Sergio Betancur Chaves"
+  description="About Sergio Betancur Chaves Lorem Ipsum"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="About"
+        tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+      >
+        <img
+          class="at-work"
+          src="/assets/at-work.png"
+          alt="Sergio Betancur Chaves at work"
+        />
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content">
+          <p>
+            I am an electronic engineer with a passion for technology and web
+            development. My education has given me a solid foundation in
+            problem-solving, logical thinking, and analytical skills, which I
+            apply in my professional life.
+          </p>
+          <p>
+            I focus on creating innovative and functional web solutions that not
+            only meet the needs of the user, but also offer an exceptional
+            experience. My experience includes developing web applications with
+            technologies such as Angular and Tailwind, with a desire to continue
+            learning new technologies that can offer cutting-edge solutions.
+          </p>
+          <p>
+            I am committed to teamwork, which can be used to carry out the most
+            ambitious projects through agile methodologies. My goal is to
+            combine my technical training with my passion for design and
+            usability to drive successful web projects
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="content">
+          <p>Universidad Nacional de Colombia, Bogotá D.C, Colombia.</p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Skills</h2>
+        <div class="content">
+          <ul class="skills-list">
+            <li id="typescript">Typescript</li>
+            <li id="html">HTML</li>
+            <li id="css">css</li>
+            <li id="nextjs">Nextjs</li>
+            <li id="angular">Angular</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  .skills-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .skills-list li::before {
+    background-size: 30px 30px;
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: "";
+  }
+
+  .skills-list #angular::before {
+    background-image: url("/assets/angular_logo.png");
+  }
+
+  .skills-list #typescript::before {
+    background-image: url("/assets/typescript_logo.png");
+  }
+
+  .skills-list #nextjs::before {
+    background-image: url("/assets/nextjs.png");
+  }
+
+  .skills-list #html::before {
+    background-image: url("/assets/html_logo.png");
+  }
+
+  .skills-list #css::before {
+    background-image: url("/assets/css_logo.png");
+  }
+
+  .at-work {
+    object-fit: cover;
+    object-position: top;
+    height: 400px;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
