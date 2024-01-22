@@ -47,13 +47,15 @@ const projects = await octokit
             <Pill><Icon icon="videogame-asset" size="1.33em" /> Gamer</Pill>
           </div>
 
-          <a
-            class="download_button"
-            href="/downloads/Curriculum_Vitae_English.pdf"
-            download="Curriculum_vitae_Sergio"
-          >
-            <Icon icon="address-book" size="1.33em" />Download my curriculum
-          </a>
+          <div class="curriculum">
+            <a
+              class="download_button"
+              href="/downloads/Curriculum_Vitae_English.pdf"
+              download="Curriculum_vitae_Sergio"
+            >
+              <Icon icon="address-book" size="1.33em" />Download my curriculum
+            </a>
+          </div>
         </Hero>
 
         <img
@@ -188,6 +190,12 @@ const projects = await octokit
 
   .section-header h3 {
     font-size: var(--text-2xl);
+  }
+
+  .curriculum {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0rem;
   }
 
   a {
