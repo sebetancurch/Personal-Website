@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <BaseLayout
@@ -55,16 +56,57 @@ import Hero from "../components/Hero.astro";
       <section>
         <h2 class="section-title">Skills</h2>
         <div class="content">
-          <ul class="skills-list">
-            <li id="typescript">Typescript</li>
-            <li id="html">HTML</li>
-            <li id="css">css</li>
-            <li id="nextjs">Nextjs</li>
-            <li id="angular">Angular</li>
-          </ul>
+          <div class="skills-grid">
+            <h2 class="section-skills-title">Top Ones</h2>
+            <div class="content">
+              <ul class="skills-list">
+                <li id="nextjs">Nextjs</li>
+                <li id="typescript">typescript</li>
+                <li id="html">html</li>
+                <li id="css">css</li>
+                <li id="tailwind">Tailwind</li>
+              </ul>
+            </div>
+            <h2 class="section-skills-title">Confortable with</h2>
+            <div class="content">
+              <ul class="skills-list">
+                <li id="angular">Angular</li>
+                <li id="sql">SQL</li>
+              </ul>
+            </div>
+            <h2 class="section-skills-title">Have some expirience</h2>
+            <div class="content">
+              <ul class="skills-list">
+                <li id="spring">Spring boot</li>
+                <li id="java">Java</li>
+                <li id="aws">AWS</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+
+    <div class="warning">
+      <div>
+        <Icon icon="info" color="var(--accent-regular)" size="3rem" />
+      </div>
+      <div class="warning-text">
+        <p>
+          If you are a company seeking a developer, please consider that my
+          expertise in various technologies is detailed both above and in my CV.
+        </p>
+        <p>
+          Development is an ongoing learning process at any stage of one's
+          career, and I am always open to mastering new technologies. While I am
+          excited to learn, I kindly request that, if you urgently require a
+          tool not listed above, a senior or highly experienced developer in a
+          technology specified on 'Have some experience' section, lets consider
+          this before initiating a selection process. This ensures an efficient
+          use of our time and resources. Thank you for understanding.
+        </p>
+      </div>
+    </div>
 
     <ContactCTA />
   </div>
@@ -100,20 +142,9 @@ import Hero from "../components/Hero.astro";
     grid-column: 2 / 4;
   }
 
-  .content :global(a) {
-    text-decoration: 1px solid underline transparent;
-    text-underline-offset: 0.25em;
-    transition: text-decoration-color var(--theme-transition);
-  }
-
-  .content :global(a:hover),
-  .content :global(a:focus) {
-    text-decoration-color: currentColor;
-  }
-
   .skills-list {
     list-style-type: none;
-    margin: 0;
+    margin: 0 2rem;
     padding: 0;
   }
 
@@ -136,7 +167,7 @@ import Hero from "../components/Hero.astro";
   }
 
   .skills-list #nextjs::before {
-    background-image: url("/assets/nextjs.png");
+    background-image: url("/assets/next-logo.png");
   }
 
   .skills-list #html::before {
@@ -147,10 +178,53 @@ import Hero from "../components/Hero.astro";
     background-image: url("/assets/css_logo.png");
   }
 
+  .skills-list #tailwind::before {
+    background-image: url("/assets/Tailwind-Logo.svg");
+  }
+
+  .skills-list #spring::before {
+    background-image: url("/assets/spring-logo.png");
+  }
+
+  .skills-list #java::before {
+    background-image: url("/assets/java-logo.png");
+  }
+
+  .skills-list #sql::before {
+    background-image: url("/assets/sql-logo.png");
+  }
+
+  .skills-list #aws::before {
+    background-image: url("/assets/aws-logo.png");
+  }
+
   .at-work {
     object-fit: cover;
     object-position: top;
     height: 400px;
+  }
+
+  .warning {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+    border: 1px solid var(--accent-regular);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    background-color: var(--gray-999_40);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .warning > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .section-skills-title {
+    font-size: var(--text-lg);
   }
 
   @media (min-width: 50em) {
@@ -166,6 +240,32 @@ import Hero from "../components/Hero.astro";
     section {
       display: contents;
       font-size: var(--text-lg);
+    }
+
+    .warning {
+      flex-direction: row;
+      gap: 3rem;
+      width: 70%;
+    }
+
+    p {
+      font-size: var(--text-lg);
+    }
+
+    .section-skills-title {
+      grid-column-start: 1;
+      font-size: var(--text-lg);
+      color: var(--gray-0);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+      gap: 2rem;
+    }
+
+    .skills-list {
+      margin: 0;
     }
   }
 </style>
