@@ -44,6 +44,7 @@ const projects = await octokit
         >
           <div class="roles">
             <Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
+            <Pill><Icon icon="electronics" size="1.33em" /> Electronics Engineer</Pill>
             <Pill><Icon icon="videogame-asset" size="1.33em" /> Gamer</Pill>
           </div>
 
@@ -60,8 +61,8 @@ const projects = await octokit
 
         <img
           alt="My beatiful face"
-          width="480"
-          height="620"
+          width="882"
+          height="880"
           src="/assets/portrait.jpg"
         />
       </header>
@@ -194,8 +195,8 @@ const projects = await octokit
 
   .curriculum {
     display: flex;
-    justify-content: center;
-    padding: 2rem 0rem;
+    justify-content: start;
+    padding: 2rem 0;
   }
 
   a {
@@ -203,15 +204,11 @@ const projects = await octokit
     display: flex;
     place-content: center;
     text-align: center;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 0.5rem;
     gap: 0.8em;
-    color: var(--accent-text-over);
-    text-decoration: none;
+    text-decoration: underline;
     line-height: 1.1;
-    border-radius: 999rem;
     overflow: hidden;
-    background: var(--gradient-accent-orange);
-    box-shadow: var(--shadow-md);
     white-space: nowrap;
     width: fit-content;
     font-size: var(--text-md);
