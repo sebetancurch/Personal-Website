@@ -3,7 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
-import Icon from "../components/Icon.astro";
 ---
 
 <BaseLayout
@@ -48,9 +47,35 @@ import Icon from "../components/Icon.astro";
         </div>
       </section>
       <section>
+        <h2 class="section-title">Currently</h2>
+        <div class="content">
+          <p>
+            I'm currently studying and preparing myself with cloud technologies,
+            more precisely by following the AWS Cloud Developer path. Cloud
+            technology has opened my eyes to a lot of possibilities for new
+            solutions and accessibility to create innovation.
+          </p>
+        </div>
+      </section>
+      <section>
         <h2 class="section-title">Education</h2>
         <div class="content">
           <p>Universidad Nacional de Colombia, Bogotá D.C, Colombia.</p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Some other certifications</h2>
+        <div class="content">
+          <div
+            data-iframe-width="150"
+            data-iframe-height="270"
+            data-share-badge-id="324848d4-b2f5-4526-ae0b-c4a483923bee"
+            data-share-badge-host="https://www.credly.com"
+          >
+          </div><script
+            type="text/javascript"
+            async
+            src="//cdn.credly.com/assets/utilities/embed.js"></script>
         </div>
       </section>
       <section>
@@ -74,11 +99,6 @@ import Icon from "../components/Icon.astro";
               <ul class="skills-list">
                 <li id="angular">Angular</li>
                 <li id="sql">SQL</li>
-              </ul>
-            </div>
-            <h2 class="section-skills-title">Have some experience</h2>
-            <div class="content">
-              <ul class="skills-list">
                 <li id="aws">AWS</li>
               </ul>
             </div>
@@ -87,7 +107,7 @@ import Icon from "../components/Icon.astro";
       </section>
     </main>
 
-    <div class="warning">
+    <!-- <div class="warning">
       <div>
         <Icon icon="info" color="var(--accent-regular)" size="3rem" />
       </div>
@@ -106,7 +126,7 @@ import Icon from "../components/Icon.astro";
           use of our time and resources. Thank you for understanding.
         </p>
       </div>
-    </div>
+    </div> -->
 
     <ContactCTA />
   </div>
