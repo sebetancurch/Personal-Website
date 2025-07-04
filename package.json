@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@octokit/rest": "^20.0.2",
-    "astro": "^4.1.2",
-    "create-astro": "^4.7.1"
+    "astro": "^5.11.0",
+    "create-astro": "^4.7.1",
+    "tslib": "^2.8.1"
   }
 }

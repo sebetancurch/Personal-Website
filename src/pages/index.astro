@@ -44,7 +44,9 @@ const projects = await octokit
         >
           <div class="roles">
             <Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-            <Pill><Icon icon="electronics" size="1.33em" /> Electronics Engineer</Pill>
+            <Pill
+              ><Icon icon="electronics" size="1.33em" /> Electronics Engineer</Pill
+            >
             <Pill><Icon icon="videogame-asset" size="1.33em" /> Gamer</Pill>
           </div>
 
@@ -60,7 +62,7 @@ const projects = await octokit
         </Hero>
 
         <img
-          alt="My beatiful face"
+          alt="My face"
           width="882"
           height="880"
           src="/assets/portrait.jpg"
@@ -80,17 +82,19 @@ const projects = await octokit
           </p>
         </header>
 
-        <div class="gallery">
-          <Grid variant="offset">
-            {
-              projects.map((project) => (
-                <li>
-                  <PortfolioPreview project={project} />
-                </li>
-              ))
-            }
-          </Grid>
-        </div>
+        {
+          projects && (
+            <div class="gallery">
+              <Grid variant="offset">
+                {projects.map((project) => (
+                  <li>
+                    <PortfolioPreview project={project} />
+                  </li>
+                ))}
+              </Grid>
+            </div>
+          )
+        }
 
         <div class="cta">
           <CallToAction href="/work/">
